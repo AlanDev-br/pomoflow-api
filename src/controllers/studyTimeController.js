@@ -4,21 +4,23 @@ const today = () => new Date().toISOString().split("T")[0];
 
 export async function getStudyTime(req, res) {
   try {
+    console.log("getStudyTime chamado para:", req.params.userId);
     const { userId } = req.params;
     const ref = db
       .collection("studyTime")
       .doc(userId)
       .collection("history")
       .doc(today());
+    console.log("ref criado, buscando...");
     const snap = await ref.get();
+    console.log("snap obtido:", snap.exists);
 
     if (!snap.exists) return res.json({ seconds: 0 });
-
     const data = snap.data();
     if (data.date !== today()) return res.json({ seconds: 0 });
-
     res.json({ seconds: data.seconds ?? 0 });
   } catch (err) {
+    console.error("ERRO no getStudyTime:", err);
     res.status(500).json({ error: err.message });
   }
 }
