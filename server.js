@@ -14,6 +14,8 @@ app.use(
 );
 
 app.use(express.json());
+app.get("/health", (req, res) => res.json({ status: "ok" }));
+
 app.use("/api/study-time", studyTimeRoutes);
 
 process.on("uncaughtException", (err) => {
