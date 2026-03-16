@@ -14,7 +14,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://pomo-flow-alan.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://pomo-flow-alan.vercel.app",
+      "https://pomo-flow.vercel.app",
+    ],
   }),
 );
 
