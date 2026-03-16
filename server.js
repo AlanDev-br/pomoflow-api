@@ -1,9 +1,14 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
+//import dotenv from "dotenv";
 //import studyTimeRoutes from "./src/routes/studyTime.js";
 
-dotenv.config();
+import { existsSync } from "fs";
+if (existsSync(".env")) {
+  dotenv.config();
+}
+
+//dotenv.config();
 
 const app = express();
 
