@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-//import dotenv from "dotenv";
+import dotenv from "dotenv";
 //import studyTimeRoutes from "./src/routes/studyTime.js";
 
 import { existsSync } from "fs";
