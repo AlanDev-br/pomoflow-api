@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import studyTimeRoutes from "./src/routes/studyTime.js";
+//import studyTimeRoutes from "./src/routes/studyTime.js";
 
 dotenv.config();
 
@@ -16,7 +16,7 @@ app.use(
 app.use(express.json());
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 
-app.use("/api/study-time", studyTimeRoutes);
+//app.use("/api/study-time", studyTimeRoutes);
 
 process.on("uncaughtException", (err) => {
   console.error("UNCAUGHT EXCEPTION:", err);
