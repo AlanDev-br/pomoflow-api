@@ -1,6 +1,6 @@
 import admin from "firebase-admin";
-import dotenv from "dotenv";
-dotenv.config();
+//import dotenv from "dotenv";
+//dotenv.config();
 
 console.log("PROJECT_ID:", process.env.FIREBASE_PROJECT_ID);
 console.log("CLIENT_EMAIL:", process.env.FIREBASE_CLIENT_EMAIL);
