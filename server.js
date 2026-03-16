@@ -16,5 +16,13 @@ app.use(
 app.use(express.json());
 app.use("/api/study-time", studyTimeRoutes);
 
+process.on("uncaughtException", (err) => {
+  console.error("UNCAUGHT EXCEPTION:", err);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("UNHANDLED REJECTION:", err);
+});
+
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`API rodando na porta ${PORT}`));
