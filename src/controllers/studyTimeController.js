@@ -129,7 +129,7 @@ export async function getWeekData(req, res) {
       .collection("history")
       .get();
 
-    const labels = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
+    const labels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     const today = new Date();
     const dayOfWeek = today.getDay();
     const monday = new Date(today);
